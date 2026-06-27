@@ -1,0 +1,243 @@
+<template>
+    <!-- ═══ Header Banner ═══ -->
+    <div class="header-banner">
+        <div class="header-content">
+            <lightning-icon icon-name="standard:task2" size="medium" class="header-icon"></lightning-icon>
+            <div class="header-text">
+                <h1 class="header-title">Weekly Project Status Update</h1>
+                <p class="header-subtitle">Complete all sections below and submit your weekly report</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+
+        <!-- ═══ Section 1: Project Information ═══ -->
+        <div class="form-section">
+            <div class="section-header">
+                <lightning-icon icon-name="utility:company" size="x-small" class="section-icon"></lightning-icon>
+                <h2 class="section-title">Project Information</h2>
+            </div>
+            <div class="section-body">
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                        <template if:true={projectsError}>
+                            <div class="slds-text-color_error slds-m-bottom_small">
+                                ⚠ {projectsError}
+                            </div>
+                        </template>
+                        <lightning-combobox label="Project" placeholder="-- Select a Project --"
+                            options={projectOptions} value={formData.project} onchange={handleProjectChange} required
+                            disabled={projectsError}>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                        <lightning-input label="Submitter" placeholder="Your full name" value={formData.submitter}
+                            data-field="submitter" onchange={handleInputChange} disabled>
+                        </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                        <lightning-input type="date" label="Report Date" value={formData.reportDate}
+                            data-field="reportDate" onchange={handleInputChange} disabled>
+                        </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                        <lightning-input label="Reporting Week" placeholder="e.g. Week 24"
+                            value={formData.reportingWeek} data-field="reportingWeek" onchange={handleInputChange}>
+                        </lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+
+        <!-- ═══ Section 2: Status Overview ═══ -->
+        <div class="form-section">
+            <div class="section-header">
+                <lightning-icon icon-name="utility:light_bulb" size="x-small" class="section-icon"></lightning-icon>
+                <h2 class="section-title">Status Overview</h2>
+            </div>
+            <div class="section-body">
+                <!-- Status Pills -->
+                <p class="field-hint">Select the current overall status of the project:</p>
+                <div class="status-selector">
+                    <template for:each={statusOptions} for:item="option">
+                        <div key={option.value} class={option.className} onclick={handleStatusSelect}
+                            data-value={option.value}>
+                            <lightning-icon icon-name={option.icon} size="xx-small" class="status-icon-inner">
+                            </lightning-icon>
+                            <span>{option.label}</span>
+                        </div>
+                    </template>
+                </div>
+                <template if:true={statusError}>
+                    <p class="status-error">⚠ Please select a status before submitting.</p>
+                </template>
+
+                <!-- Phase & Completion -->
+                <lightning-layout multiple-rows class="slds-m-top_medium">
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                        <lightning-combobox label="Project Phase" placeholder="-- Select Phase --"
+                            options={phaseOptions} value={formData.projectPhase} onchange={handlePhaseChange}>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                        <div class="completion-wrapper">
+                            <label class="completion-label">Completion — {completionDisplay}</label>
+                            <lightning-slider min="0" max="100" step="5" value={formData.completion}
+                                data-field="completion" onchange={handleCompletionChange}>
+                            </lightning-slider>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout multiple-rows class="slds-m-top_medium">
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                        <!-- <div class="team-health-row">
+
+                    <div> -->
+                        <label class="section-label">
+                            Team Morale: {emojiValue}
+                        </label>
+
+                        <div class="emoji-row">
+                            <button class="emoji-btn" data-id="Bad" onclick={handleEmojiClick}>☹️</button>
+                            <button class="emoji-btn" data-id="Could be better" onclick={handleEmojiClick}>🙁</button>
+                            <button class="emoji-btn" data-id="Normal" onclick={handleEmojiClick}>🙂</button>
+                            <button class="emoji-btn" data-id="Good" onclick={handleEmojiClick}>😊</button>
+                            <button class="emoji-btn" data-id="Great" onclick={handleEmojiClick}>😃</button>
+                        </div>
+
+
+                        <!-- </div>
+                </div> -->
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+
+                        <label class="section-label">
+                            Supporting Documents
+                        </label>
+
+                        <lightning-file-upload label="Upload Files" name="projectUploader" record-id={feedbackId}
+                            multiple accept={acceptedFormats} onuploadfinished={handleUploadFinished}>
+                        </lightning-file-upload>
+
+                        <template if:true={files.length}>
+
+                            <div class="file-list">
+
+                                <template for:each={files} for:item="file">
+
+                                    <div key={file.id} class="file-item">
+                                        <template if:true={file.isImage}>
+                                            <img src={file.thumbnailUrl} alt={file.title} class="file-thumbnail" />
+                                        </template>
+
+                                        <template if:false={file.isImage}>
+                                            <lightning-icon icon-name="doctype:attachment" size="x-small">
+                                            </lightning-icon>
+                                        </template>
+
+                                        <!-- <lightning-icon icon-name="doctype:attachment" size="x-small">
+                                        </lightning-icon> -->
+
+                                        <a href={file.url} target="_blank">
+                                            {file.title}
+                                        </a>
+
+                                        <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
+                                            title="Delete" data-id={file.id} onclick={handleDeleteFile}>
+                                        </lightning-button-icon>
+
+                                    </div>
+
+                                </template>
+
+                            </div>
+
+                        </template>
+
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </div>
+        </div>
+
+        <!-- ═══ Section 3: Progress & Accomplishments ═══ -->
+        <div class="form-section">
+            <div class="section-header">
+                <lightning-icon icon-name="utility:checkin" size="x-small" class="section-icon"></lightning-icon>
+                <h2 class="section-title">Progress &amp; Accomplishments</h2>
+            </div>
+            <div class="section-body">
+                <lightning-textarea label="Key Accomplishments This Week"
+                    placeholder="Summarize what was completed or achieved this week..." value={formData.progressSummary}
+                    data-field="progressSummary" onchange={handleInputChange} max-length="5000">
+                </lightning-textarea>
+            </div>
+        </div>
+
+        <!-- ═══ Section 4: Next Week's Plan ═══ -->
+        <div class="form-section">
+            <div class="section-header">
+                <lightning-icon icon-name="utility:forward" size="x-small" class="section-icon"></lightning-icon>
+                <h2 class="section-title">Next Week's Plan</h2>
+            </div>
+            <div class="section-body">
+                <lightning-textarea label="Next Week's Plan"
+                    placeholder="Describe your high-level plan for next week..." value={formData.nextWeekPlan}
+                    data-field="nextWeekPlan" onchange={handleInputChange} max-length="5000">
+                </lightning-textarea>
+                <div class="slds-m-top_small">
+                    <lightning-textarea label="Planned Activities &amp; Deliverables"
+                        placeholder="List specific activities, deliverables, and milestones..."
+                        value={formData.plannedActivities} data-field="plannedActivities" onchange={handleInputChange}
+                        max-length="5000">
+                    </lightning-textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ Section 5: Risks & Blockers ═══ -->
+        <div class="form-section">
+            <div class="section-header">
+                <lightning-icon icon-name="utility:warning" size="x-small" class="section-icon"></lightning-icon>
+                <h2 class="section-title">Risks &amp; Blockers</h2>
+            </div>
+            <div class="section-body">
+                <lightning-textarea label="Risk / Blocker Description &amp; Mitigation"
+                    placeholder="Describe any risks, blockers, dependencies, or escalations..."
+                    value={formData.riskBlockers} data-field="riskBlockers" onchange={handleInputChange}
+                    max-length="5000">
+                </lightning-textarea>
+            </div>
+        </div>
+
+        <!-- ═══ Section 6: Notes for Leadership ═══ -->
+        <div class="form-section">
+            <div class="section-header">
+                <lightning-icon icon-name="utility:note" size="x-small" class="section-icon"></lightning-icon>
+                <h2 class="section-title">Notes for Leadership</h2>
+            </div>
+            <div class="section-body">
+                <lightning-textarea label="Leadership Notes"
+                    placeholder="Any key messages, decisions needed, or escalations for leadership attention..."
+                    value={formData.notesForLeadership} data-field="notesForLeadership" onchange={handleInputChange}
+                    max-length="5000">
+                </lightning-textarea>
+            </div>
+        </div>
+
+        <!-- ═══ Footer Actions ═══ -->
+        <div class="form-footer">
+            <lightning-button label="Cancel" variant="neutral" onclick={handleCancel}>
+            </lightning-button>
+            <lightning-button label="Reset Form" variant="neutral" icon-name="utility:refresh" onclick={handleReset}>
+            </lightning-button>
+            <lightning-button label="Save" variant="neutral" icon-name="utility:save" onclick={handleSaveDraft}
+                disabled={isSubmitting}>
+            </lightning-button>
+            <lightning-button label="Submit Report" variant="brand" icon-name="utility:upload" onclick={handleSubmit}
+                disabled={isSubmitting}>
+            </lightning-button>
+        </div>
+    </div>
+</template>
