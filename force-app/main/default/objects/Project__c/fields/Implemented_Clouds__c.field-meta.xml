@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implemented_Clouds__c</fullName>
+    <label>Implemented Clouds</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales Cloud</fullName>
+                <default>false</default>
+                <label>Sales Cloud</label>
+            </value>
+            <value>
+                <fullName>Service Cloud</fullName>
+                <default>false</default>
+                <label>Service Cloud</label>
+            </value>
+            <value>
+                <fullName>Field Service Cloud</fullName>
+                <default>false</default>
+                <label>Field Service Cloud</label>
+            </value>
+            <value>
+                <fullName>Data Cloud</fullName>
+                <default>false</default>
+                <label>Data Cloud</label>
+            </value>
+            <value>
+                <fullName>Marketing Cloud</fullName>
+                <default>false</default>
+                <label>Marketing Cloud</label>
+            </value>
+            <value>
+                <fullName>Experience Cloud</fullName>
+                <default>false</default>
+                <label>Experience Cloud</label>
+            </value>
+            <value>
+                <fullName>Revenue Cloud</fullName>
+                <default>false</default>
+                <label>Revenue Cloud</label>
+            </value>
+            <value>
+                <fullName>Financial Services Cloud</fullName>
+                <default>false</default>
+                <label>Financial Services Cloud</label>
+            </value>
+            <value>
+                <fullName>Health Cloud</fullName>
+                <default>false</default>
+                <label>Health Cloud</label>
+            </value>
+            <value>
+                <fullName>Education Cloud</fullName>
+                <default>false</default>
+                <label>Education Cloud</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
