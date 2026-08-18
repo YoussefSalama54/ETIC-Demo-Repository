@@ -1,12 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>PersonAccount</fullName>
+    <fullName>Business_Account</fullName>
     <active>true</active>
-    <label>Person Account</label>
+    <label>Business Account</label>
     <picklistValues>
         <picklist>AccountSource</picklist>
         <values>
+            <fullName>Cold Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce IoT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -69,6 +105,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Financial Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Food %26 Beverage</fullName>
             <default>false</default>
         </values>
@@ -77,7 +117,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Healthcare %26 Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
             <default>false</default>
         </values>
         <values>
@@ -163,6 +211,10 @@
     <picklistValues>
         <picklist>Rating</picklist>
         <values>
+            <fullName>Cool</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Hot</fullName>
             <default>false</default>
         </values>
@@ -174,7 +226,23 @@
     <picklistValues>
         <picklist>Type</picklist>
         <values>
+            <fullName>Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid-Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Business</fullName>
             <default>false</default>
         </values>
     </picklistValues>
