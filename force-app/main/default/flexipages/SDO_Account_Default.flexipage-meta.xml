@@ -12,16 +12,6 @@
                         <valueListItems>
                             <value>CreateAccountChannel</value>
                         </valueListItems>
-                        <valueListItems>
-                            <value>Account.Add_Project_Assignment</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!$User.UserRole.Name}</leftValue>
-                                    <operator>CONTAINS</operator>
-                                    <rightValue>manager</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
