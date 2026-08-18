@@ -5,8 +5,6 @@
     <name>Experience Approval Queue</name>
     <queueMembers>
         <users>
-            <user>caroleen.mourad@pwc.com.agentforceproject</user>
-            <user>youssef.seyam@pwc.com.agentforceproject</user>
         </users>
     </queueMembers>
     <queueSobject>

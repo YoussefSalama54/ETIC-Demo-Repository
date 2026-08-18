@@ -170,9 +170,6 @@ Who: Sales Team</description>
     </nameField>
     <pluralLabel>Certifications</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields xsi:nil></customTabListAdditionalFields>
-        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Score__c</customTabListAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
