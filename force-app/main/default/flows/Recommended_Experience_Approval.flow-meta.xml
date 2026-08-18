@@ -98,21 +98,6 @@
                 <name>ActionInput__CustomEmailBody</name>
             </inputParameters>
             <inputParameters>
-                <name>ActionInput__ApprovalChainName</name>
-            </inputParameters>
-            <inputParameters>
-                <name>ActionInput__CanUseSmartApproval</name>
-            </inputParameters>
-            <inputParameters>
-                <name>ActionInput__CanUseRuleBasedAutoApprovals</name>
-            </inputParameters>
-            <inputParameters>
-                <name>ActionInput__ApprovalSkipConditions</name>
-            </inputParameters>
-            <inputParameters>
-                <name>ActionInput__ApprovalOverrideDecision</name>
-            </inputParameters>
-            <inputParameters>
                 <name>ActionInput__RequiredMultiMemberApprovalPercentage</name>
             </inputParameters>
             <label>Approval Submission</label>
