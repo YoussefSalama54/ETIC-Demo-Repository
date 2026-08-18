@@ -720,20 +720,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-3a1659e2-3063-4eb6-b76f-302aacdc8379</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Meeting Events</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
                     <value>Facet-19d07a2d-ec2e-41ae-a13a-a14f946a04d0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
