@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Years_of_SF_Experience__c</fullName>
+    <externalId>false</externalId>
+    <formula>(YEAR(TODAY()) - YEAR(SF_Experience_Start_Date__c))
+- 
+IF(
+    DATE(
+        YEAR(TODAY()),
+        MONTH(SF_Experience_Start_Date__c),
+        DAY(SF_Experience_Start_Date__c)
+    ) &gt; TODAY(),
+    1,
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Years of SF Experience</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

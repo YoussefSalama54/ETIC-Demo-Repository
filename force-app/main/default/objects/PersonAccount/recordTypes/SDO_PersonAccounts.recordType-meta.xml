@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SDO_PersonAccounts</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Person_Account</compactLayoutAssignment>
+    <description>Independent customers who are not related to business accounts.</description>
+    <label>Person Accounts</label>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+    </picklistValues>
+</RecordType>

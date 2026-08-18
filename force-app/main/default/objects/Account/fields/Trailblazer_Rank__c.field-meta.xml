@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trailblazer_Rank__c</fullName>
+    <label>Trailblazer Rank</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Scout</fullName>
+                <default>false</default>
+                <label>Scout</label>
+            </value>
+            <value>
+                <fullName>Hiker</fullName>
+                <default>false</default>
+                <label>Hiker</label>
+            </value>
+            <value>
+                <fullName>Explorer</fullName>
+                <default>false</default>
+                <label>Explorer</label>
+            </value>
+            <value>
+                <fullName>Adventurer</fullName>
+                <default>false</default>
+                <label>Adventurer</label>
+            </value>
+            <value>
+                <fullName>Mountaineer</fullName>
+                <default>false</default>
+                <label>Mountaineer</label>
+            </value>
+            <value>
+                <fullName>Expeditioner</fullName>
+                <default>false</default>
+                <label>Expeditioner</label>
+            </value>
+            <value>
+                <fullName>Ranger</fullName>
+                <default>false</default>
+                <label>Ranger</label>
+            </value>
+            <value>
+                <fullName>Double Star Ranger</fullName>
+                <default>false</default>
+                <label>Double Star Ranger</label>
+            </value>
+            <value>
+                <fullName>Triple Star Ranger</fullName>
+                <default>false</default>
+                <label>Triple Star Ranger</label>
+            </value>
+            <value>
+                <fullName>Four Star Ranger</fullName>
+                <default>false</default>
+                <label>Four Star Ranger</label>
+            </value>
+            <value>
+                <fullName>Five Star Ranger</fullName>
+                <default>false</default>
+                <label>Five Star Ranger</label>
+            </value>
+            <value>
+                <fullName>All Star Ranger</fullName>
+                <default>false</default>
+                <label>All Star Ranger</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

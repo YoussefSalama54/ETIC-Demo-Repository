@@ -84,20 +84,10 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Account__c</fieldItem>
-                <identifier>RecordAccount_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Project__c</fieldItem>
-                <identifier>RecordProject_cField</identifier>
+                <fieldItem>Record.Certificate_Price__c</fieldItem>
+                <identifier>RecordCertificate_Price__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -106,21 +96,11 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Is_Owner__c</fieldItem>
-                <identifier>RecordIs_Owner_cField</identifier>
+                <fieldItem>Record.Retake_Price__c</fieldItem>
+                <identifier>RecordRetake_Price__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Is_Active__c</fieldItem>
-                <identifier>RecordIs_Active_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-aa90c08d-8806-4c94-9344-b1c52aae8798</name>
+        <name>Facet-efa72667-db19-426c-95f8-a7957f3df5f1</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -130,18 +110,8 @@
                     <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Start_Date__c</fieldItem>
-                <identifier>RecordStart_Date_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.End_Date__c</fieldItem>
-                <identifier>RecordEnd_Date_cField</identifier>
+                <fieldItem>Record.Issuer__c</fieldItem>
+                <identifier>RecordIssuer_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -150,8 +120,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Allocation__c</fieldItem>
-                <identifier>RecordAllocation_cField</identifier>
+                <fieldItem>Record.Certification_Category__c</fieldItem>
+                <identifier>RecordCertification_Category__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -160,28 +130,11 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Role__c</fieldItem>
-                <identifier>RecordRole_cField</identifier>
+                <fieldItem>Record.Number_of_Certificate_Holders__c</fieldItem>
+                <identifier>RecordNumber_of_Certificate_Holders__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Other_Role__c</fieldItem>
-                <identifier>RecordOther_Role_cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Role__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Other</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-642a4da8-ad91-4773-937c-af523d41f523</name>
+        <name>Facet-9f39b279-d8f9-445f-9a43-a25e2c535764</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -189,7 +142,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-aa90c08d-8806-4c94-9344-b1c52aae8798</value>
+                    <value>Facet-efa72667-db19-426c-95f8-a7957f3df5f1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column</identifier>
@@ -199,13 +152,13 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-642a4da8-ad91-4773-937c-af523d41f523</value>
+                    <value>Facet-9f39b279-d8f9-445f-9a43-a25e2c535764</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-c8c6017c-9936-4f2c-a292-d0a0e4ad90aa</name>
+        <name>Facet-247af082-86e6-4e8f-b150-3e124a3f5bda</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -219,7 +172,7 @@
                 <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-faa3a0db-cd6b-4a93-b1bc-1d42a5cf7ee1</name>
+        <name>Facet-5ecfd4ea-c20a-49eb-826d-05feddc42c15</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -233,7 +186,7 @@
                 <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-e93fc12b-8bce-4e53-ac72-ac0e35de8bdc</name>
+        <name>Facet-5989e55a-c690-469d-9a66-c22f58c22a10</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -241,7 +194,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-faa3a0db-cd6b-4a93-b1bc-1d42a5cf7ee1</value>
+                    <value>Facet-5ecfd4ea-c20a-49eb-826d-05feddc42c15</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column3</identifier>
@@ -251,13 +204,13 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-e93fc12b-8bce-4e53-ac72-ac0e35de8bdc</value>
+                    <value>Facet-5989e55a-c690-469d-9a66-c22f58c22a10</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-bd86e15b-cf7d-4e43-8d30-53d76bcd4e5a</name>
+        <name>Facet-6fd5bd61-2669-4ffb-9a8d-d4539a75598f</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -265,7 +218,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-c8c6017c-9936-4f2c-a292-d0a0e4ad90aa</value>
+                    <value>Facet-247af082-86e6-4e8f-b150-3e124a3f5bda</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
@@ -283,7 +236,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-bd86e15b-cf7d-4e43-8d30-53d76bcd4e5a</value>
+                    <value>Facet-6fd5bd61-2669-4ffb-9a8d-d4539a75598f</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
@@ -362,9 +315,9 @@
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Project Assignment Record Page</masterLabel>
+    <masterLabel>Certification Record Page</masterLabel>
     <parentFlexiPage>flexipage__default_rec_L</parentFlexiPage>
-    <sobjectType>Project_Assignment__c</sobjectType>
+    <sobjectType>SDO_ChannelPartner_Certification__c</sobjectType>
     <template>
         <name>flexipage:recordHomeTemplateDesktop</name>
     </template>

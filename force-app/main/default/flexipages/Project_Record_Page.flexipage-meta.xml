@@ -125,6 +125,12 @@
                 <identifier>RecordIndustry__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Internal__c</fieldItem>
+                <identifier>RecordInternal__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-a38350f3-b0e3-4299-995b-9ef09b15e89f</name>
         <type>Facet</type>
     </flexiPageRegions>
