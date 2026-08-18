@@ -33,25 +33,5 @@
     </picklistValues>
     <picklistValues>
         <picklist>Type</picklist>
-        <values>
-            <fullName>Enterprise</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Mid-Market</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Partner</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Person</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Small Business</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
 </RecordType>
