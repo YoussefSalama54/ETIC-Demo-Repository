@@ -7,34 +7,6 @@
     <label>Person Accounts</label>
     <picklistValues>
         <picklist>AccountSource</picklist>
-        <values>
-            <fullName>Cold Call</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Community</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Data%2Ecom</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Inbound Call</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Marketing Event</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Referral</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Salesforce IoT</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Industry</picklist>

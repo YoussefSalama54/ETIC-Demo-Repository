@@ -52,11 +52,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Tier__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Account.Trailblazer_Profile_Link__c</field>
         <readable>true</readable>
     </fieldPermissions>
