@@ -3,7 +3,7 @@
     <fullName>Edit_Access</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-    $User.Id &lt;&gt;  CreatedBy.Id,
+    $User.Id &lt;&gt;  Employee__r.OwnerId ,
      $UserRole.Name  &lt;&gt; &quot;Manager&quot;
 )</errorConditionFormula>
     <errorMessage>Only the Owner/Manager can edit this record</errorMessage>
