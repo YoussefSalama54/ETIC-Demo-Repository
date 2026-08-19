@@ -258,10 +258,6 @@
         <fields>NAME</fields>
         <relatedList>Experienced_Employee__c.Employee__c</relatedList>
     </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Meeting_Minutes_Document__c.Account__c</relatedList>
-    </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>true</showHighlightsPanel>
