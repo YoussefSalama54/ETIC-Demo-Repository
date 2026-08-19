@@ -72,6 +72,57 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Copy_1_of_Has_Error</name>
+        <label>Has Error?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Success_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Should_End</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Not_Allowed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Error_Screen</targetReference>
+            </connector>
+            <label>Should End</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_Error</name>
+        <label>Has Error?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Success_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Should_End</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Not_Allowed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error_Screen</targetReference>
+            </connector>
+            <label>Should End</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Selected_Option</name>
         <label>Selected Option</label>
         <locationX>0</locationX>
@@ -203,6 +254,30 @@
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Textt</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(176, 35, 35);&quot;&gt;You do not have permission to perform this action&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(176, 35, 35);&quot;&gt;Only the record owner or a Manager can create or update Employee Certifications for this employee.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <screens>
         <name>Salesforce_Experience_Start_Date_Screen</name>
         <label>Salesforce Experience Start Date Screen</label>
@@ -354,7 +429,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Success_Screen</targetReference>
+            <targetReference>Copy_1_of_Has_Error</targetReference>
         </connector>
         <flowName>Submit_Experience</flowName>
         <inputAssignments>
@@ -363,6 +438,10 @@
                 <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
+        <outputAssignments>
+            <assignToReference>Not_Allowed</assignToReference>
+            <name>hasError</name>
+        </outputAssignments>
     </subflows>
     <subflows>
         <name>Upload_Certifications</name>
@@ -370,7 +449,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Success_Screen</targetReference>
+            <targetReference>Has_Error</targetReference>
         </connector>
         <flowName>Upload_Certifications</flowName>
         <inputAssignments>
@@ -379,7 +458,21 @@
                 <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
+        <outputAssignments>
+            <assignToReference>Not_Allowed</assignToReference>
+            <name>hasError</name>
+        </outputAssignments>
     </subflows>
+    <variables>
+        <name>Not_Allowed</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

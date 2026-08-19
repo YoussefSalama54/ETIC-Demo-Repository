@@ -50,6 +50,19 @@
             <targetReference>Create_Employee_Certification</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Has_Error</name>
+        <label>Has Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>hasError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <choices>
         <name>ExistingCertificate</name>
         <choiceText>Choose an Existing Certificate</choiceText>
@@ -72,6 +85,38 @@
             <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
         </value>
     </customProperties>
+    <decisions>
+        <name>Can_User_Update_Certification</name>
+        <label>Can User Update Certification?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Has_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Authorized</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Account.OwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_All_Certificates</targetReference>
+            </connector>
+            <label>Authorized</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>File_Uploaded</name>
         <label>File Uploaded?</label>
@@ -288,7 +333,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_All_Certificates</targetReference>
+            <targetReference>Can_User_Update_Certification</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -614,6 +659,16 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>hasError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>NewCertificateID</name>

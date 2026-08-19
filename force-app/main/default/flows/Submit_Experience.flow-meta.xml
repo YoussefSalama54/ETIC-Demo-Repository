@@ -2,12 +2,57 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Has_Error</name>
+        <label>Has Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>hasError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <customProperties>
         <name>ScreenProgressIndicator</name>
         <value>
             <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
         </value>
     </customProperties>
+    <decisions>
+        <name>Can_User_Update_Experience</name>
+        <label>Can User Update Experience?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Has_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Authorized</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Account.OwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Cloud_Experiences</targetReference>
+            </connector>
+            <label>Authorized</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Experience_Found</name>
         <label>Experience Not Found?</label>
@@ -281,7 +326,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Cloud_Experiences</targetReference>
+            <targetReference>Can_User_Update_Experience</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -906,6 +951,16 @@
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>hasError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
