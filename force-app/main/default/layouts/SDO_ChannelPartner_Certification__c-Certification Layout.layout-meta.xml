@@ -94,10 +94,6 @@
         <fields>NAME</fields>
         <relatedList>Certified_Employee__c.Certification__c</relatedList>
     </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Voucher_Request__c.Certification_Requested__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
