@@ -267,30 +267,38 @@
     </recordTypeVisibilities>
     <tabSettings>
         <tab>Certified_Employee__c</tab>
-        <visibility>Available</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>Experience__c</tab>
-        <visibility>Available</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>Experienced_Employee__c</tab>
-        <visibility>Available</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>Project_Assignment__c</tab>
-        <visibility>Available</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>Project__c</tab>
-        <visibility>Available</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>SDO_ChannelPartner_Certification__c</tab>
-        <visibility>Available</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>standard-Account</tab>
-        <visibility>Available</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>LightningConsoleAllowedForUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>LightningExperienceUser</name>
+    </userPermissions>
 </PermissionSet>
