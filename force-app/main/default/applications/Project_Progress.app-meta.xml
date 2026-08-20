@@ -16,6 +16,11 @@
     <tabs>Project__c</tabs>
     <tabs>standard-Account</tabs>
     <tabs>Feedback__c</tabs>
+    <tabs>Voucher_Request__c</tabs>
+    <tabs>Exam_Voucher__c</tabs>
+    <tabs>Experienced_Employee__c</tabs>
+    <tabs>Certified_Employee__c</tabs>
+    <tabs>Project_Assignment__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Project_Progress_UtilityBar</utilityBar>
 </CustomApplication>
