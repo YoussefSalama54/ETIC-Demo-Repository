@@ -34,10 +34,10 @@
             <name>Authorized</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$User.Id</leftValueReference>
+                <leftValueReference>SameUser</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Get_Account.OwnerId</elementReference>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -150,6 +150,11 @@
         <picklistObject>Experience__c</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>SameUser</name>
+        <dataType>Boolean</dataType>
+        <expression>CASESAFEID({!$User.Id}) = {!Get_Account.OwnerId}</expression>
+    </formulas>
     <interviewLabel>Submit Experience {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Submit Experience</label>
     <loops>

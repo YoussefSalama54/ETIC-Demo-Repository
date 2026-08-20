@@ -98,10 +98,10 @@
             <name>Authorized</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$User.Id</leftValueReference>
+                <leftValueReference>SameUser</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Get_Account.OwnerId</elementReference>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -190,6 +190,11 @@
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>SameUser</name>
+        <dataType>Boolean</dataType>
+        <expression>CASESAFEID({!$User.Id}) = {!Get_Account.Owner.Id}</expression>
+    </formulas>
     <interviewLabel>Upload Certifications {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Upload Certifications</label>
     <loops>
